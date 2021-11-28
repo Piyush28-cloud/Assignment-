@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piyush Table</title>
+    
+    <style>
+        
+        .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+th,td {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#data {
+    margin-bottom: 10px;
+}
+
+#data input, button {
+    padding: 10px;
+    width: 90px;
+}
+table
+
+{ 
+
+margin-right: auto;
+
+margin-left: auto;
+
+counter-reset: serial-number;
+
+
+}
+
+table td:first-child:before {
+counter-increment: serial-number;  /* Increment the serial number counter */
+content: counter(serial-number);  /* Display the counter */
+
+}
+html {
+   min-height: 100%;
+   background-image: url(image.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+
+
+    </style>
+</head>
+<body>
+
+    
+
+        <table id="pk">
+            <tr>
+                 <th>SNo</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                 <th>City</th>
+                <th>Country</th>
+
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>Piysuh</td>
+                <td>Khobragade</td>
+                <td>Pauni</td>
+                <td>India</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>Kunal</td>
+                <td>Khobragade</td>
+                <td>Bhandara</td>
+                <td>India</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>Hitesh</td>
+                <td>Sakhare</td>
+                <td>Gondia</td>
+                <td>India</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>Payal</td>
+                <td>Khobragade</td>
+                <td>Jalgaon</td>
+                <td>India</td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <br>
+
+        <div class="container">
+        <div id="data">
+            <input type="number" id="SNo" placeholder="Enter SNumber">
+            <input type="text" id="FirstName" placeholder="Enter FirstName">
+            <input type="text" id="LastName" placeholder="Enter LastName">
+            <input type="text" id="City" placeholder="Enter City">
+            <input type="text" id="Country" placeholder="Enter Country">
+            <button>Add</button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        
+        let btnAdd = document.querySelector('button');
+let table = document.querySelector('table');
+
+
+let SNoInput = document.querySelector('#SNo');
+let FirstNameInput = document.querySelector('#FirstName');
+let LastNameInput = document.querySelector('#LastName');
+let CityInput = document.querySelector('#City');
+let CountryInput = document.querySelector('#Country');
+
+
+btnAdd.addEventListener('click', () => {
+    let SNo = SNoInput.value;
+    let FirstName = FirstNameInput.value;
+    let LastName = LastNameInput.value;
+    let City = CityInput.value;
+    let Country = CountryInput.value;
+
+    let template = `
+                <tr>
+                    <td>${SNo}</td>
+                    <td>${FirstName}</td>
+                    <td>${LastName}</td>
+                    <td>${City}</td>
+                    <td>${Country}</td>
+                </tr>`;
+
+    table.innerHTML += template;
+});
+
+function myFunction() {
+  var table = document.getElementById("pk");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+  var cell4 = row.insertCell(3);
+  var cell5 = row.insertCell(4);
+  cell1.innerHTML = "SNo";
+  cell2.innerHTML = "FirstName";
+  cell3.innerHTML = "LastName";
+  cell4.innerHTML = "City";
+  cell5.innerHTML = "Country";
+
+
+}
+    </script>
+    
+</body>
+
+<center>
+<button type="button" onclick="myFunction()">Add row to Top</button>
+
+</center>
+</html>
